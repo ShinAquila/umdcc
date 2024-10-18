@@ -1,0 +1,10 @@
+abstract = desc
+members = org
+
+REMINDER:
+1. I usab ang design to make it look like UM
+2. clean some code
+3. change the database name and other variables
+4. create a logo
+
+THEN FINALIZATION
