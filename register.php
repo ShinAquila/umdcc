@@ -14,11 +14,11 @@
             width: calc(100%) !important;
         }
 
-        body {
+        /* body {
             background-image: url("<?php echo validate_image($_settings->info('cover')) ?>");
             background-size: cover;
             background-repeat: no-repeat;
-        }
+        } */
 
         .login-title {
             text-shadow: 2px 2px black
@@ -48,17 +48,17 @@
       max-width:unset !important
     } */
     </style>
-    <div class="h-100 d-flex  align-items-center w-100" id="login">
-        <div class="col-7 h-100 d-flex align-items-center justify-content-center">
-            <div class="w-100">
-                <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="" id="logo-img"></center>
-                <h1 class="text-center py-5 login-title"><b><?php echo $_settings->info('name') ?> - Admin</b></h1>
-            </div>
+    <div class="align-items-center" id="login">
 
-        </div>
-        <div class="col-5 h-100 bg-gradient bg-navy">
-            <div class="w-100 d-flex justify-content-center align-items-center h-100 text-navy">
-                <div class="card card-outline card-primary rounded-0 shadow col-lg-10 col-md-10 col-sm-5">
+        <div class="bg-gradient bg-danger">
+            <div class="w-100 d-flex justify-content-center align-items-center h-100 text-dark">
+                <div class="my-4 card card-outline card-warning rounded-0 shadow col-lg-6 col-md-10 col-sm-6">
+                    <div class="w-70">
+                        <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="" id="logo-img">
+                        </center>
+                        <h3 class="text-center"><b><?php echo $_settings->info('name') ?></b></h3>
+                        <h5 class="text-center">Student</h5>
+                    </div>
                     <div class="card-header">
                         <h5 class="card-title text-center text-dark"><b>Registration</b></h5>
                     </div>
@@ -175,9 +175,12 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-8">
+                                    <a class="text-red" href="<?php echo base_url ?>">Go Back</a>
+                                </div>
+                                <div class="col-4">
                                     <div class="form-group text-right">
-                                        <button class="btn btn-default bg-navy btn-flat"> Register</button>
+                                        <button class="btn btn-default bg-success btn-flat"> Register</button>
                                     </div>
                                 </div>
                             </div>
@@ -185,6 +188,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-6 h-100 d-flex align-items-center justify-content-center">
         </div>
     </div>
 

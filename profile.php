@@ -13,9 +13,9 @@ foreach($user->fetch_array() as $k =>$v){
 	}
 </style>
 <div class="content py-4">
-    <div class="card card-outline card-primary shadow rounded-0">
+    <div class="card card-outline card-danger shadow rounded-0">
         <div class="card-header rounded-0">
-            <h5 class="card-title">Your Information:</h5>
+            <h5 class="font-weight-bold card-title">Your Information:</h5>
             <div class="card-tools">
                 <a href="./?page=my_archives" class="btn btn-default bg-primary btn-flat"><i class="fa fa-archive"></i> My Archives</a>
                 <a href="./?page=manage_account" class="btn btn-default bg-navy btn-flat"><i class="fa fa-edit"></i> Update Account</a>
@@ -32,15 +32,15 @@ foreach($user->fetch_array() as $k =>$v){
                         </div>
                         <div class="col-lg-8 col-sm-12">
                             <dl>
-                                <dt class="text-navy">Student Name:</dt>
+                                <dt class="text-danger">Student Name:</dt>
                                 <dd class="pl-4"><?= ucwords($fullname) ?></dd>
-                                <dt class="text-navy">Gender:</dt>
+                                <dt class="text-danger">Gender:</dt>
                                 <dd class="pl-4"><?= ucwords($gender) ?></dd>
-                                <dt class="text-navy">Email:</dt>
+                                <dt class="text-danger">Email:</dt>
                                 <dd class="pl-4"><?= $email ?></dd>
-                                <dt class="text-navy">Department:</dt>
+                                <dt class="text-danger">Department:</dt>
                                 <dd class="pl-4"><?= ucwords($department) ?></dd>
-                                <dt class="text-navy">Curriculum:</dt>
+                                <dt class="text-danger">Curriculum:</dt>
                                 <dd class="pl-4"><?= ucwords($curriculum) ?></dd>
                             </dl>
                         </div>

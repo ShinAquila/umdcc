@@ -19,11 +19,11 @@ if(isset($_GET['id'])){
 ?>
 <div class="content py-2">
     <div class="col-12">
-        <div class="card card-outline card-primary shadow rounded-0">
+        <div class="card card-outline card-danger shadow rounded-0">
             <div class="card-body rounded-0">
                 <h2>Archive List of <?= isset($department['name']) ? $department['name'] : "" ?> </h2>
                 <p><small><?= isset($department['description']) ? $department['description'] : "" ?></small></p>
-                <hr class="bg-navy">
+                <hr class="bg-warning">
                 <?php 
                 $id = isset($_GET['id']) ? $_GET['id'] : '';
                 $limit = 10;
@@ -48,8 +48,8 @@ if(isset($_GET['id'])){
                                 <img src="<?= validate_image($row['banner_path']) ?>" class="banner-img img-fluid bg-gradient-dark" alt="Banner Image">
                             </div>
                             <div class="col-lg-8 col-md-7 col-sm-12">
-                                <h3 class="text-navy"><b><?php echo $row['title'] ?></b></h3>
-                                <small class="text-muted">By <b class="text-info"><?= isset($student_arr[$row['student_id']]) ? $student_arr[$row['student_id']] : "N/A" ?></b></small>
+                                <h3 class="text-black"><b><?php echo $row['title'] ?></b></h3>
+                                <small class="text-muted">By <b class="text-danger"><?= isset($student_arr[$row['student_id']]) ? $student_arr[$row['student_id']] : "N/A" ?></b></small>
                                 <p class="truncate-5"><?= $row['desc'] ?></p>
                             </div>
                         </div>
@@ -65,7 +65,7 @@ if(isset($_GET['id'])){
                             <ul class="pagination pagination-sm m-0 float-right">
                                 <li class="page-item"><a class="page-link" href="./?page=projects_per_department&id=<?= $id ?>&p=<?= $page - 1 ?>" <?= $page == 1 ? 'disabled' : '' ?>>«</a></li>
                                 <?php for($i = 1; $i<= $pages; $i++): ?>
-                                <li class="page-item"><a class="page-link <?= $page == $i ? 'active' : '' ?>" href="./?page=projects_per_department&id=<?= $id ?>&p=<?= $i ?>"><?= $i ?></a></li>
+                                <li class="page-item"><a class="bg-danger page-link <?= $page == $i ? 'active' : '' ?>" href="./?page=projects_per_department&id=<?= $id ?>&p=<?= $i ?>"><?= $i ?></a></li>
                                 <?php endfor; ?>
                                 <li class="page-item"><a class="page-link" href="./?page=projects_per_department&id=<?= $id ?>&p=<?= $page + 1 ?>" <?= $page == $pages || $pages <= 1 ? 'disabled' : '' ?>>»</a></li>
                             </ul>

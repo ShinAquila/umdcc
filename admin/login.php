@@ -25,7 +25,11 @@
     }
 
     #login {
-      flex-direction: column !important
+      direction: rtl
+    }
+
+    #login>* {
+      direction: ltr
     }
 
     #logo-img {
@@ -35,61 +39,72 @@
       object-position: center center;
       border-radius: 100%;
     }
-
-    #login .col-7,
-    #login .col-5 {
-      width: 100% !important;
-      max-width: unset !important
-    }
   </style>
-  <div class="h-100 d-flex align-items-center w-100" id="login">
-    <div class="col-7 h-100 d-flex align-items-center justify-content-center">
-      <div class="w-100">
-        <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="" id="logo-img"></center>
-        <h4 class="text-center py-3 "><b><?php echo $_settings->info('name') ?> - Admin</b></h4>
-      </div>
 
-    </div>
-    <div class="col-5 h-100 bg-gradient">
-      <div class="d-flex w-100 h-100 justify-content-center align-items-center">
-        <div class="card col-sm-12 col-md-6 col-lg-3 card-outline card-primary">
+  <div class="h-100 d-flex align-items-center w-100" id="login">
+
+    <div class="col-6 h-100 bg-gradient bg-danger">
+      <div class="w-100 d-flex justify-content-center align-items-center h-100 text-navy">
+        <div class="card card-outline card-warning rounded-0 shadow col-lg-10 col-md-10 col-sm-5">
+          <div class="w-100">
+            <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="" id="logo-img">
+            </center>
+            <h3 class="text-center"><b><?php echo $_settings->info('name') ?></b></h3>
+            <h5 class="text-center">Admin</h5>
+          </div>
+
           <div class="card-header">
-            <h4 class="text-purle text-center"><b>Login</b></h4>
+            <h5 class="card-title text-center text-dark"><b>Login</b></h5>
           </div>
           <div class="card-body">
-            <form id="login-frm" action="" method="post">
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" autofocus name="username" placeholder="Username">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <span class="fas fa-user"></span>
+            <form action="" id="login-frm">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="input-group mb-3">
+                    <input type="text" name="username" autofocus placeholder="Username" class="form-control" required>
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="input-group mb-3">
-                <input type="password" class="form-control" name="password" placeholder="Password">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <span class="fas fa-lock"></span>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-8">
-                  <a href="<?php echo base_url ?>">Go to Website</a>
+                  <a class="text-red" href="<?php echo base_url ?>">Go Back</a>
                 </div>
-                <!-- /.col -->
                 <div class="col-4">
-                  <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                  <div class="form-group text-right">
+                    <button class="btn btn-default bg-success btn-flat"> Login</button>
+                  </div>
                 </div>
-                <!-- /.col -->
               </div>
             </form>
           </div>
         </div>
       </div>
     </div>
+    <div class="col-6 h-100 d-flex align-items-center justify-content-center"></div>
+
   </div>
+
+
+
+
+
 
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>

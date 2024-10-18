@@ -1,8 +1,12 @@
 <?php
+session_start();
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
+
 ob_start();
 ini_set('date.timezone','Asia/Manila');
 date_default_timezone_set('Asia/Manila');
-session_start();
 
 require_once('initialize.php');
 require_once('classes/DBConnection.php');

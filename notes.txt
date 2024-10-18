@@ -8,3 +8,22 @@ REMINDER:
 4. create a logo
 
 THEN FINALIZATION
+
+
+
+
+
+
+
+
+
+FROM
+1. inc 
+    a. navigation.php
+    b. packages.php
+
+2. Gawas
+    a. about_us.html
+    b. about_us.php
+    c. about.php
+    d. packages-gawas.php

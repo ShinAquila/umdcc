@@ -1,10 +1,14 @@
-<?php require_once('./config.php'); ?>
+<?php require_once('./config.php'); 
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en" class="" style="height: auto;">
 <title>UM Digos College Chronicles</title>
 <style>
   #header {
-    height: 70vh;
+    height: 86vh;
     width: calc(100%);
     position: relative;
     top: -1em;
@@ -19,6 +23,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    opacity: 0.5;
   }
 
   #header>div {
@@ -42,6 +47,8 @@
     left: 33.33%;
     bottom: 0;
   }
+
+
 </style>
 <?php require_once('inc/header.php') ?>
 
@@ -59,8 +66,8 @@
       <?php if ($page == "home" || $page == "about_us"): ?>
         <div id="header" class="shadow mb-4">
           <div class="d-flex justify-content-center h-100 w-100 align-items-center flex-column px-3">
-            <h1 class="w-100 text-center site-title"><?php echo $_settings->info('name') ?></h1>
-            <a href="./?page=projects" class="btn btn-lg btn-light rounded-pill w-25" id="enrollment"><b>Explore
+            <h1 class="w-80 text-black font-weight-bold"><?php echo $_settings->info('name') ?></h1>
+            <a href="./?page=projects" class="btn btn-lg btn-warning rounded-pill w-25 text-danger" id="enrollment"><b>Explore
                 Archives</b></a>
           </div>
         </div>

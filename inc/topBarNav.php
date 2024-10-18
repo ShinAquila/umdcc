@@ -31,7 +31,7 @@
     padding-top: calc(5em) !important;
   }
 </style>
-<nav class="bg-navy w-100 px-2 py-1 position-fixed top-0" id="login-nav">
+<nav class="bg-danger w-100 px-2 py-1 position-fixed top-0" id="login-nav">
   <div class="d-flex justify-content-between w-100">
     <div>
       <span class="mr-2  text-white"></span>
@@ -42,10 +42,10 @@
             id="student-img-avatar"></span>
         <span class="mx-2">Welcome,
           <?= !empty($_settings->userdata('firstname')) ? $_settings->userdata('firstname') : $_settings->userdata('email') ?>!</span>
-        <span class="mx-1"><a href="<?= base_url . 'classes/Login.php?f=student_logout' ?>"><i
+        <span class="mx-1"><a href="<?= base_url.'classes/Login.php?f=student_logout' ?>"><i
               class="fa fa-power-off"></i></a></span>
       <?php else: ?>
-        <a href="./register.php" class="mx-2 text-light me-2">Register</a>
+        <a href="./register.php" class="btn btn-sm btn-warning rounded-pill font-weight-bold">Register</a>
         <a href="./login.php" class="mx-2 text-light me-2">Student Login</a>
         <a href="./admin" class="mx-2 text-light">Admin login</a>
       <?php endif; ?>
@@ -58,7 +58,7 @@
     <a href="./" class="navbar-brand">
       <img src="<?php echo validate_image($_settings->info('logo')) ?>" alt="Site Logo"
         class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span><?= $_settings->info('short_name') ?></span>
+      <span class="text-black font-weight-bold"><?= $_settings->info('short_name') ?></span>
     </a>
 
     <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -70,15 +70,15 @@
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="./" class="nav-link <?= isset($page) && $page == 'home' ? "active" : "" ?>">Home</a>
+          <a href="./" class="text-warning nav-link <?= isset($page) && $page == 'home' ? "active" : "" ?>">Home</a>
         </li>
         <li class="nav-item">
           <a href="./?page=projects"
-            class="nav-link <?= isset($page) && $page == 'projects' ? "active" : "" ?>">Archives</a>
+            class="text-warning nav-link <?= isset($page) && $page == 'projects' ? "active" : "" ?>">Archives</a>
         </li>
         <li class="nav-item dropdown">
           <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-            class="nav-link dropdown-toggle  <?= isset($page) && $page == 'projects_per_department' ? "active" : "" ?>">Department</a>
+            class="text-warning nav-link dropdown-toggle  <?= isset($page) && $page == 'projects_per_department' ? "active" : "" ?>">Department</a>
           <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow"
             style="left: 0px; right: inherit;">
             <?php
@@ -99,7 +99,7 @@
       </li>
       <li class="nav-item dropdown">
         <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-          class="nav-link dropdown-toggle  <?= isset($page) && $page == 'projects_per_curriculum' ? "active" : "" ?>">Courses</a>
+          class="text-warning nav-link dropdown-toggle  <?= isset($page) && $page == 'projects_per_curriculum' ? "active" : "" ?>">Courses</a>
         <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
           <?php
           $curriculums = $conn->query("SELECT * FROM curriculum_list where status = 1 order by `name` asc");
@@ -117,19 +117,16 @@
       <?php endwhile; ?>
       </ul>
       </li>
-      <li class="nav-item">
-        <a href="./?page=about" class="nav-link <?= isset($page) && $page == 'about' ? "active" : "" ?>">About Us</a>
-      </li>
       <!-- <li class="nav-item">
                 <a href="#" class="nav-link">Contact</a>
               </li> -->
       <?php if ($_settings->userdata('id') > 0): ?>
         <li class="nav-item">
-          <a href="./?page=profile" class="nav-link <?= isset($page) && $page == 'profile' ? "active" : "" ?>">Profile</a>
+          <a href="./?page=profile" class="text-warning nav-link <?= isset($page) && $page == 'profile' ? "active" : "" ?>">Profile</a>
         </li>
         <li class="nav-item">
           <a href="./?page=submit-archive"
-            class="nav-link <?= isset($page) && $page == 'submit-archive' ? "active" : "" ?>">Submit an Archive</a>
+            class="text-warning nav-link <?= isset($page) && $page == 'submit-archive' ? "active" : "" ?>">Submit an Archive</a>
         </li>
       <?php endif; ?>
       </ul>
@@ -138,7 +135,7 @@
     </div>
     <!-- Right navbar links -->
     <div class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
-      <a href="javascript:void(0)" class="text-navy" id="search_icon"><i class="fa fa-search"></i></a>
+      <a href="javascript:void(0)" class="text-danger" id="search_icon"><i class="fa fa-search"></i></a>
       <div class="position-relative">
         <div id="search-field" class="position-absolute">
           <input type="search" id="search-input" class="form-control rounded-0" required placeholder="Search..."

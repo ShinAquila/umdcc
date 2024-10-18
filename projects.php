@@ -1,9 +1,9 @@
 <div class="content py-2">
     <div class="col-12">
-        <div class="card card-outline card-primary shadow rounded-0">
+        <div class="card card-outline card-danger shadow rounded-0">
             <div class="card-body rounded-0">
                 <h2>Archive List</h2>
-                <hr class="bg-navy">
+                <hr class="bg-warning">
                 <?php
                 $limit = 10;
                 $page = isset($_GET['p']) ? $_GET['p'] : 1;
@@ -16,7 +16,7 @@
                     $search = " and (title LIKE '%{$keyword}%' or curriculum_id in (SELECT id from curriculum_list where name  LIKE '%{$keyword}%' or description  LIKE '%{$keyword}%') or curriculum_id in (SELECT id from curriculum_list where department_id in (SELECT id FROM department_list where name  LIKE '%{$keyword}%' or description  LIKE '%{$keyword}%'))) ";
                 }
                 $students = $conn->query("SELECT * FROM `student_list` where id in (SELECT student_id FROM archive_list where `status` = 1 {$search})");
-                $student_arr = array_column($students->fetch_all(MYSQLI_ASSOC), 'email','id');
+                $student_arr = array_column($students->fetch_all(MYSQLI_ASSOC), 'email', 'id');
                 $count_all = $conn->query("SELECT * FROM archive_list where `status` = 1 {$search}")->num_rows;
                 $pages = ceil($count_all / $limit);
                 $archives = $conn->query("SELECT * FROM archive_list where `status` = 1 {$search} order by unix_timestamp(date_created) desc {$paginate}");
@@ -37,9 +37,9 @@
                                         class="banner-img img-fluid bg-gradient-dark" alt="Banner Image">
                                 </div>
                                 <div class="col-lg-8 col-md-7 col-sm-12">
-                                    <h3 class="text-navy"><b><?php echo $row['title'] ?></b></h3>
+                                    <h3 class="text-black"><b><?php echo $row['title'] ?></b></h3>
                                     <small class="text-muted">By <b
-                                            class="text-info"><?= isset($student_arr[$row['student_id']]) ? $student_arr[$row['student_id']] : "N/A" ?></b></small>
+                                            class="text-danger"><?= isset($student_arr[$row['student_id']]) ? $student_arr[$row['student_id']] : "N/A" ?></b></small>
                                     <p class="truncate-5"><?= $row['desc'] ?></p>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                                 <li class="page-item"><a class="page-link"
                                         href="./?page=projects<?= $isSearch ?>&p=<?= $page - 1 ?>" <?= $page == 1 ? 'disabled' : '' ?>>«</a></li>
                                 <?php for ($i = 1; $i <= $pages; $i++): ?>
-                                    <li class="page-item"><a class="page-link <?= $page == $i ? 'active' : '' ?>"
+                                    <li class="page-item"><a class="bg-danger page-link <?= $page == $i ? 'active' : '' ?>"
                                             href="./?page=projects<?= $isSearch ?>&p=<?= $i ?>"><?= $i ?></a></li>
                                 <?php endfor; ?>
                                 <li class="page-item"><a class="page-link"

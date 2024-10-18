@@ -1,8 +1,8 @@
 <div class="content py-3">
     <div class="container-fluid">
-        <div class="card card-outline card-primary shadow rounded-0">
+        <div class="card card-outline card-danger shadow rounded-0">
             <div class="card-header rounded-0">
-                <h4 class="card-title">My Submitted Projects</h4>
+                <h4 class="font-weight-bold card-title">My Submitted Projects</h4>
             </div>
             <div class="card-body rounded-0">
                 <div class="container-fluid">
