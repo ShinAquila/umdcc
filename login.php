@@ -111,6 +111,12 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                            <div class="col-12">
+                                    <a class="text-red" href="register.php">Create an Account</a>
+                                </div>
+
+                            </div>
                         </form>
                     </div>
                 </div>

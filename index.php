@@ -67,7 +67,7 @@
         <div id="header" class="shadow mb-4">
           <div class="d-flex justify-content-center h-100 w-100 align-items-center flex-column px-3">
             <h1 class="w-80 text-black font-weight-bold"><?php echo $_settings->info('name') ?></h1>
-            <a href="./?page=projects" class="btn btn-lg btn-warning rounded-pill w-25 text-danger" id="enrollment"><b>Explore
+            <a href="./?page=student-archive/projects" class="btn btn-lg btn-warning rounded-pill w-25 text-danger" id="enrollment"><b>Explore
                 Archives</b></a>
           </div>
         </div>

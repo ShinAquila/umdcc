@@ -11,10 +11,10 @@ Class Users extends DBConnection {
 		parent::__destruct();
 	}
 	public function save_users(){
-		if(!isset($_POST['status']) && $this->settings->userdata('login_type') == 1){
-			$_POST['status'] = 1;
-			$_POST['type'] = 2;
-		}
+		// if(!isset($_POST['status']) && $this->settings->userdata('login_type') == 1){
+		// 	$_POST['status'] = 1;
+		// 	$_POST['type'] = 1;
+		// }
 		extract($_POST);
 		$oid = $id;
 		$data = '';

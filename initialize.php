@@ -13,5 +13,5 @@ if (!defined('DB_USERNAME'))
 if (!defined('DB_PASSWORD'))
     define('DB_PASSWORD', "");
 if (!defined('DB_NAME'))
-    define('DB_NAME', "otas_db");
+    define('DB_NAME', "umdcc_db");
 ?>

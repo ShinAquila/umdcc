@@ -73,12 +73,12 @@
           <a href="./" class="text-warning nav-link <?= isset($page) && $page == 'home' ? "active" : "" ?>">Home</a>
         </li>
         <li class="nav-item">
-          <a href="./?page=projects"
-            class="text-warning nav-link <?= isset($page) && $page == 'projects' ? "active" : "" ?>">Archives</a>
+          <a href="./?page=student-archive/projects"
+            class="text-warning nav-link <?= isset($page) && $page == 'student-archive/projects' ? "active" : "" ?>">Archives</a>
         </li>
         <li class="nav-item dropdown">
           <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-            class="text-warning nav-link dropdown-toggle  <?= isset($page) && $page == 'projects_per_department' ? "active" : "" ?>">Department</a>
+            class="text-warning nav-link dropdown-toggle  <?= isset($page) && $page == 'student-archive/projects_per_department' ? "active" : "" ?>">Department</a>
           <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow"
             style="left: 0px; right: inherit;">
             <?php
@@ -88,7 +88,7 @@
               $dI--;
               ?>
               <li>
-                <a href="./?page=projects_per_department&id=<?= $row['id'] ?>"
+                <a href="./?page=student-archive/projects_per_department&id=<?= $row['id'] ?>"
                   class="dropdown-item"><?= ucwords($row['name']) ?></a>
                 <?php if ($dI != 0): ?>
                 <li class="dropdown-divider"></li>
@@ -99,7 +99,7 @@
       </li>
       <li class="nav-item dropdown">
         <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-          class="text-warning nav-link dropdown-toggle  <?= isset($page) && $page == 'projects_per_curriculum' ? "active" : "" ?>">Courses</a>
+          class="text-warning nav-link dropdown-toggle  <?= isset($page) && $page == 'student-archive/projects_per_curriculum' ? "active" : "" ?>">Courses</a>
         <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
           <?php
           $curriculums = $conn->query("SELECT * FROM curriculum_list where status = 1 order by `name` asc");
@@ -108,7 +108,7 @@
             $cI--;
             ?>
             <li>
-              <a href="./?page=projects_per_curriculum&id=<?= $row['id'] ?>"
+              <a href="./?page=student-archive/projects_per_curriculum&id=<?= $row['id'] ?>"
                 class="dropdown-item"><?= ucwords($row['name']) ?></a>
               <?php if ($cI != 0): ?>
               <li class="dropdown-divider"></li>
@@ -125,8 +125,8 @@
           <a href="./?page=profile" class="text-warning nav-link <?= isset($page) && $page == 'profile' ? "active" : "" ?>">Profile</a>
         </li>
         <li class="nav-item">
-          <a href="./?page=submit-archive"
-            class="text-warning nav-link <?= isset($page) && $page == 'submit-archive' ? "active" : "" ?>">Submit an Archive</a>
+          <a href="./?page=student-archive/submit_archive"
+            class="text-warning nav-link <?= isset($page) && $page == 'student-archive/submit_archive' ? "active" : "" ?>">Submit an Archive</a>
         </li>
       <?php endif; ?>
       </ul>

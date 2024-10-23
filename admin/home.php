@@ -6,7 +6,7 @@
             <span class="info-box-icon bg-info elevation-1"><i class="fas fa-th-list"></i></span>
 
             <div class="info-box-content">
-            <span class="info-box-text">Department List</span>
+            <a href="?page=departments"><span class="info-box-text">Department List</span></a>
             <span class="info-box-number text-right">
                 <?php 
                     echo $conn->query("SELECT * FROM `department_list` where status = 1")->num_rows;
@@ -21,7 +21,7 @@
         <div class="info-box bg-light shadow">
             <span class="info-box-icon bg-gradient-dark elevation-1"><i class="fas fa-scroll"></i></span>
             <div class="info-box-content">
-            <span class="info-box-text">Curriculum List</span>
+            <a href="?page=curriculum"><span class="info-box-text">Curriculum List</span></a>
             <span class="info-box-number text-right">
                 <?php 
                     echo $conn->query("SELECT * FROM `curriculum_list` where `status` = 1")->num_rows;
@@ -37,7 +37,7 @@
             <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-users"></i></span>
 
             <div class="info-box-content">
-            <span class="info-box-text">Verified Students</span>
+            <a href="?page=students"><span class="info-box-text">Verified Students</span></a>
             <span class="info-box-number text-right">
                 <?php 
                     echo $conn->query("SELECT * FROM `student_list` where `status` = 1")->num_rows;
@@ -53,7 +53,7 @@
             <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
             <div class="info-box-content">
-            <span class="info-box-text">Not Verified Students</span>
+            <a href="?page=students"><span class="info-box-text">Not Verified Students</span></a>
             <span class="info-box-number text-right">
                 <?php 
                     echo $conn->query("SELECT * FROM `student_list` where `status` = 0")->num_rows;
@@ -69,7 +69,7 @@
             <span class="info-box-icon bg-success elevation-1"><i class="fas fa-archive"></i></span>
 
             <div class="info-box-content">
-            <span class="info-box-text">Verified Archives</span>
+            <a href="?page=archives"><span class="info-box-text">Verified Archives</span></a>
             <span class="info-box-number text-right">
                 <?php 
                     echo $conn->query("SELECT * FROM `archive_list` where `status` = 1")->num_rows;
@@ -86,7 +86,7 @@
             <span class="info-box-icon bg-dark elevation-1"><i class="fas fa-archive"></i></span>
 
             <div class="info-box-content">
-            <span class="info-box-text">Not Verified Archives</span>
+            <a href="?page=archives"><span class="info-box-text">Not Verified Archives</span></a>
             <span class="info-box-number text-right">
                 <?php 
                     echo $conn->query("SELECT * FROM `archive_list` where `status` = 0")->num_rows;

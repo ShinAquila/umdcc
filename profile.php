@@ -17,7 +17,7 @@ foreach($user->fetch_array() as $k =>$v){
         <div class="card-header rounded-0">
             <h5 class="font-weight-bold card-title">Your Information:</h5>
             <div class="card-tools">
-                <a href="./?page=my_archives" class="btn btn-default bg-primary btn-flat"><i class="fa fa-archive"></i> My Archives</a>
+                <a href="./?page=student-archive/my_archives" class="btn btn-default bg-primary btn-flat"><i class="fa fa-archive"></i> My Archives</a>
                 <a href="./?page=manage_account" class="btn btn-default bg-navy btn-flat"><i class="fa fa-edit"></i> Update Account</a>
             </div>
         </div>
